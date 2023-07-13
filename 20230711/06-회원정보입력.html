@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회원정보입력</title>
+<style>
+    fieldset{
+      width: 300;
+    }
+</style>
+</head>
+<body>
+  <div id="container"style="width: 400px; height: 300px;">
+    <h1>회원 정보 입력</h1>
+    <fieldset >
+        <legend>로그인정보</legend>
+       
+        <label for="user-id">아이디</label>
+        <input type="text" id="user-id" name="user-id"
+         placeholder="text"><br>
+       
+       
+         <label for="user-pw">비밀번호</label>
+         <input type="password" id="user-pw" name="user-pw"
+             placeholder="password" size="5">
+          <id="buttons"><input type="submit" value="로그인">
+        
+    </fieldset>
+    <fieldset>
+       <legend>추가정보</legend>
+          <label for="mailad">메일주소: <input type="email" id="mailad" name="mailad" placeholder="email"></label><br>
+          <br> 메일수신                   
+                    <input type="radio" name="mailing" id="mailing_y">
+                    <label for="mailing_y">메일 수신 동의</label>
+                    <input type="radio" name="mailing" id="mailing_n">
+                    <label for="mailing_n">메일 수신 거부</label>
+          <br>
+          <br>
+        <label for="number">연락처: <input type="tel" id="number" name="number" placeholder="하이픈을 빼고 입력해주세요"
+          size="20" maxlength="11" autocomplete="off">
+        </label><br>
+        <label for="birth">생년월일: <input type="text" id="birth" name="birth" placeholder="YYYY-MM-DD"
+          size="20" maxlength="11" autocomplete="off"><br>
+
+          취미 : 
+          <label for="habbit1"><input type="checkbox" id="habbit1" value="h_1"> 독서 </label>
+          <label for="habbit2"><input type="checkbox" id="habbit2" value="h_2"> 음악감상</label>
+          <label for="habbit3"><input type="checkbox" id="habbit3" value="h_3"> 운동 </label>
+        </label>   
+        <br>
+        <br>
+        <label for="path">가입 경로</label>
+        <select id="path">
+            <option value="">블로그</option>
+            <option value="">검색</option>
+            <option value="">SNS</option>
+            <option value="">지인추천</option>
+            <option value="">기타</option>
+        </select>
+          <br>
+          <br>
+          메모
+          <textarea name="" id="" cols="30" rows="10" placeholder="자유롭게 의견을 남겨주세요" size="5"></textarea>
+         
+    </fieldset>
+    
+    
+    <br>
+    <div id="buttons">
+      <input type="image" src="../images/로그인.png" width="50">
+      <input type="submit" value="제출" >
+      
+  </div>
+</body>
+</html>

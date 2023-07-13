@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>플렉스박스</title>
+  <style>
+    section{
+      display: flex;  /*부모요소에서 입력한다*/
+       /*
+      주축y 축
+      */
+      /*justify-content: space-between 적당한 공백이 있으면서 정렬
+      justify-content: space-around (양쪽끝 공백)적당한 공백있으면서 정렬
+      justify-content: center 가운데정렬
+      justify-content: flex-end 전체가 오른쪽 창 끝으로
+      justify-content: start
+      */
+      /*
+      교차축 x축
+      */
+      /*
+      align-items: center;    
+      height: 100vh;
+      border: 3px solid brown;
+      align-items: flex-end;
+      *align-items: flex-start; height: 100vh
+      */
+      flex-direction: column;/*세로로로 방향 전환 (주축이됨) 없으면 가로로 기본*/
+      justify-content: space-between; /*간격조절?같은거*/
+      height: 100vh; /*전체화면(스크롤)*/
+      border: 3px solid brown;
+      /*연습 사이트 https://flexboxfroggy.com/#ko*/
+    }
+      div{
+        width: 100px;
+        height: 100px;
+        border: 1px solid;
+         }
+      .box1{
+        background-color: pink;        
+      }
+      .box2{
+        background-color: lightblue;
+      }
+      .box3{
+        background-color: yellowgreen;
+      }
+      .box4{
+        background-color: yellow;
+      }
+      .box5{
+        background-color: red;
+      }
+  </style>
+</head>
+<body>
+  <section>
+    <display></display>
+   <div class="box1">box1</div>
+   <div class="box2">box2</div>
+   <div class="box3">box3</div>
+   <div class="box4">box4</div>
+   <div class="box5">box5</div>
+  </section>
+</body>
+</html>
