@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>드롭다운버튼</title>
+    <style>
+        div a{
+            display: flex;
+        }
+        .wrap{
+            border: 0px  solid ; /*겉에 두꺼운선 없에는거*/ 
+            width: 100px;            
+            }
+        .wrap:hover .smWrap{
+            display: block;
+            }
+        .smWrap{
+            display: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <button>드롭다운</button>
+        <div class="smWrap"> <!--드롭다운컨텐츠-->
+            <a href="#">서브메뉴1</a>
+            <a href="#">서브메뉴2</a>
+            <a href="#">서브메뉴3</a>
+        </div>
+    </div>
+    
+</body>
+</html>

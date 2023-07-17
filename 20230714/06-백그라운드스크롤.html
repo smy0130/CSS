@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>백그라운드스크롤</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+   h3{
+      text-align: center;
+      color: whitesmoke;
+      font-size: 70px;      
+      font-weight: 800;
+      line-height: 700px;
+      margin-left: 250px;
+      position: fixed;
+      /*  margin-left: 250px;
+      position: fixed;
+      넣지 않으면 고정 되지 않는다*/
+    }
+    .section1{
+      height: 700px;
+      background: url(../images/이미지4.jpg) no-repeat 50% 0 fixed;
+      background-size: cover;
+    }
+    .section2{
+      height: 700px;
+      background: url(../images/이미지1.jpg) no-repeat 50% 0 scroll;
+      background-size: cover;
+    }
+    .section3{
+      height: 700px;
+      background: url(../images/이미지2.jpg) no-repeat 50% 0 scroll;
+      background-size: cover;
+    }
+    .section4{
+      height: 700px;
+      background: url(/images/이미지3.jpg) no-repeat 50% 0 scroll;
+      background-size: cover;
+    }
+  </style>
+</head>
+<body>
+    <div>
+        <section class="section1">
+            <h3> WEB FRONTEND</h3>
+        </section>
+        <section class="section2">
+          <h3> WEB FRONTEND</h3>
+      </section>
+      <section class="section3">
+        <h3> WEB FRONTEND</h3>
+    </section>
+    <section class="section4">
+      <h3> WEB FRONTEND</h3>
+  </section>
+    </div>
+</body>
+</html>

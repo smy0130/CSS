@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> a태그 스타일 타겟 속성</title>
+    <style>
+        [target]{ /*속성 중 target이 있는 요소선택 */
+            background-color: blue;
+            color: aliceblue;
+        }
+        [target=_blank]{/*traget속성중 _balck인 요소 (값에 일치)*/
+            background-color: red;
+            color: aliceblue;
+        }
+        [title~="웹(web)"]{/*title 속성"값"이 포함된(~) 모든요소*/
+            background-color: black;
+            color: aliceblue;
+        }
+        [lang|=en] {/*lang속성 값이 문자 en문자열 포함된 모든 요서(하이픈 포함) 단어발*/
+            background-color: yellowgreen;
+            color: black;
+        }
+        a[herf^="https"]{/*href값이 https로 시작하는(^)요소 선택*/
+            background-color: violet;
+            color: aliceblue;
+        }
+        a[herf$="com"]{/*href값이 속성값($) com으로 끝나는 요소*/
+            background-color: green;
+            color: aliceblue;
+            text-decoration: overline;
+        }
+        a[herf*="daum"]{/*href값이 daum포함(*)된 요소 선택(속성값 일부)*/
+            background-color: aqua;
+            color: black;
+        }
+           </style>
+</head>
+    
+<body>
+    <div>        
+        <p>프론트엔드는 많은 앞 단에 이루어지는 <a href="#"><i>웹 사이트</i></a>를 처리한다.</p>
+        <p><a href="#" target="_self" title="웹 기획">웹 기획</a></p>
+        <p><a href="#" target="_blank" title="웹 스토리보드">웹 스토리보드</a></p>
+        <p><a href="#" title="웹 스토리텔링">웹 스토리텔링</a></p>
+
+        <div>
+            <h1 class="section" title="선택자 스타일 지정">선택자 스타일 지정</h1>
+            <p class="text-web" title="웹 디자이너">웹 디자이너</p>
+        </div>
+
+        <div>
+        <p><a href="#" target="_self" title="웹 기획">웹 기획</a></p>
+        <p><a href="#" target="_blank" title="웹 스토리보드">웹 스토리보드</a></p>
+        <p><a href="#" title="웹(web) 스토리텔링" lang="en">웹 스토리텔링</a></p>
+        </div>
+        <div>
+        <p><a href="http://www.naver.com" title="웹(web) 기획">웹 기획</a></p>
+        <p><a href="http://www.daum.com"  title="웹(web) 스토리보드">웹 스토리보드</a></p>
+        <p><a href="http://google.co.kr" title="웹(web) 스토리텔링" >웹 스토리텔링</a></p>
+        </div>
+
+        
+    </div>
+</body>
+</html>
