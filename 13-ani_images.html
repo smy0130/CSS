@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ani_images</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #wrap{
+            width: 1000px;
+            margin: 0 auto;
+        }
+        ul{
+            position: relative;
+            list-style: none;
+            width: 4000px;
+            height: 350px;
+            animation: slideAni 8s infinite alternate ease-in-out;
+            overflow: hidden;
+        }
+        @keyframes slideAni{
+            0%{left: 0;}
+            25%{left: -1000px;}
+            50%{left: -2000px;}       
+            75%{left: -3000px;}
+            100{left: 0;}
+        }
+        li{
+            width: 1000px;
+            height: 350px;
+            float: left; /**/
+        }
+        li:nth-child(1){
+            background: url(../images/이미지1.jpg);
+            background-size: cover;
+        }
+        li:nth-child(2){
+            background: url(../images/이미지2.jpg);
+            background-size: cover;
+        }
+        li:nth-child(3){
+            background: url(../images/이미지3.jpg);
+            background-size: cover;
+        }
+        li:nth-child(4){
+            background: url(../images/이미지4.jpg);
+            background-size: cover;
+        }
+       
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="slide-wrap">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

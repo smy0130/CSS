@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .origin{
+            width: 150px;
+            height: 180px;
+            border: 1px solid black;
+            /*float: left;*/
+            display: inline-block;
+            margin: 30px;
+        }
+        img{
+            width: 150px;
+            height: 180px;
+        }
+        .rotatex:hover{
+            transform: rotateX(50deg);
+        }
+        .rotatey:hover{
+            transform: rotateY(50deg);
+        }
+        #pers{
+            perspective: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="origin"> <!--오리지널 사진-->
+        <img src="https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg">
+    </div>
+    <div class="origin"><!--오리지널 사진-->
+        <div class="rotatex"></div> <!--부모요소에 효과를준다-->
+        <img src="https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg">
+    </div>
+    <div class="origin"><!--오리지널 사진-->
+        <div class="rotatey"></div> <!--부모요소에 효과를준다-->
+        <img src="https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg">
+    </div>
+    <div class="origin" id="pers"><!--원근감-->
+        <div class="rotatex"></div> <!--부모요소에 효과를준다-->
+        <img src="https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg">
+    </div>
+    <div class="origin" id="pers"><!--원근감-->
+        <div class="rotatey"></div> <!--부모요소에 효과를준다-->
+        <img src="https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg">
+    </div>
+</body>
+</html>
