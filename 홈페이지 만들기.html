@@ -5,26 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>홈페이지 만들기</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
-        
-        
+        @import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');                
         *{
-        margin: 0;
-        padding: 0;
+            box-sizing: border-box;
         }
+        body{
+            margin: 0;
+        }
+        /*
         header{
             position: fixed;
             width:100% ;
-            margin-top: 0;
+            
         }
+        */
         nav{
+            position: fixed;
+            width:100% ;
             font-family: 'Pangolin', cursive;
             display: flex;
             justify-content: space-between;
             height: 50px;
             background-color: lightblue;
             padding-top: 15px;
-           
+            width: 100%;
+            
             }
         
         .logo{
@@ -43,8 +48,10 @@
         }
         li{
             padding: 0 15px;
+           
             
         }
+        
         a{
             text-decoration: none;
             color: gray;
@@ -80,6 +87,7 @@
             font-size:45px;
             color: black;
             font-family: 'Pangolin', cursive;
+            margin: 10px;
             
             }
         .ment2{
@@ -108,13 +116,14 @@
             <div class="navbar">
                 <ul>
                     <li><a href="자기소개.html">자기소개</a></li>
+                    <li><a href="어학연수.html">어학연수 사진</a></li>
                     <li><a href="https://www.instagram.com/sm_yu29" target='_blank'>Instagram<img src="../images/인스타완성.jpg"> </a></li>                    
-                    <li><a href="https://smileben.tistory.com" target='_blank'>Blog<img src="../images/t완성.jpg"></a></li>
+                    <li><a href="https://smileben.tistory.com" target='_blank'>Blog<img src="../images/t완성.jpg"></a></li>                    
                 </ul>
             </div>
         </nav>
         </header>
-            
+           
     <main>
             <h2 class="ment1"> WELCOME TO<br> MY HOMEPAGE</h2>
             <div class="ment2">유승민의 홈페이지에<br> 오신 것을 환영합니다.</div>            
@@ -123,5 +132,6 @@
         <a href="http://acorncampus.co.kr/" target='_blank'><strong>에이콘아카데미</strong></a> 서울 마포구 양화로 122 3층, 4층  ( 02-2231-6412 )
         <br>MAKE BY YU SEUNG MIN. 
     </footer>
+
 </body>
 </html>

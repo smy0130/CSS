@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section{
+            margin: 0;
+            background: url(../images/이미지1.jpg) no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 900px;
+        }
+        .firPart span{
+            color: aliceblue;
+            font-size: 50px;
+            position: absolute;
+            top: 52%;
+            right: 5%;
+            animation: moveIn 2s ease-out;
+        }
+        @keyframes moveIn {
+            from{
+                right: -10%;
+                opacity: 0; /*0~1까지 소수점*/
+            }
+            to{
+                right: 5%;
+                opacity: 0.8;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="firPart">
+            <!-- span 인라인요소. 줄 안에서 해당 글자만큼 공간을 차지-->
+            <!--b, strong 강조.-->
+            <span> pour un logiciel CRM,</span>
+            <p>
+                simple, complet<br>
+                et intuitif
+            </p>
+        </div>
+        
+        <pre class="secPart"> <!--입력한 대로 엔터(줄 바꿈) 적용-->
+            CRM 소프트웨어를 선택하고,
+            간단하고 완전하며
+            직관적인
+        </pre>
+    </section>
+</body>
+</html>
