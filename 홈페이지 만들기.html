@@ -1,137 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>홈페이지 만들기</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');                
-        *{
-            box-sizing: border-box;
-        }
-        body{
-            margin: 0;
-        }
-        /*
-        header{
-            position: fixed;
-            width:100% ;
-            
-        }
-        */
-        nav{
-            position: fixed;
-            width:100% ;
-            font-family: 'Pangolin', cursive;
-            display: flex;
-            justify-content: space-between;
-            height: 50px;
-            background-color: lightblue;
-            padding-top: 15px;
-            width: 100%;
-            
-            }
+      @import url("https://fonts.googleapis.com/css2?family=Pangolin&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        position: fixed;
+        /*position: absolute;*/
+        top: 0;
+        width: 100%;
+        /*margin-top: 0;*/
         
-        .logo{
-            cursor: pointer;
-            padding: 1px;
-            margin-left: 20px;
-        }
-        .navbar{
-            margin-right: 40px;
-            font-size: 25px;
-        }
-        ul{
-            list-style: none;
-            display: flex;
-            align-items: flex-start;
-        }
-        li{
-            padding: 0 15px;
-           
-            
-        }
-        
-        a{
-            text-decoration: none;
-            color: gray;
-            width: 100px;            
-        }
-        .logologo{
-            color: rgb(65,65,95);
-            font-weight: 100px;
-            
-        }
-       img{
-            width: 20px;
-            height: 20px;
-            margin-right: 10px;
-        
-       }
-        
-        main{
-            background-image: url(images/홈페이지\ 배경화면으로\ 쓸것.png);
-            background-repeat: no-repeat;
-            background-size: cover;
-            height: 1200px; 
-            width: 100% ;         
-            margin-top:0;
-            border-bottom: 1px solid black;
-            
-            
-            }
-        .ment1{
-            position: relative;
-            top: 250px;
-            left: 10px;
-            font-size:45px;
-            color: black;
-            font-family: 'Pangolin', cursive;
-            margin: 10px;
-            
-            }
-        .ment2{
-           position: relative;
-           top: 220px;
-           left: 10px;
-           font-size: 25px;
-           color: black;
-           font-family: 'Pangolin', cursive;
-           margin: 40px;
-            }  
-        footer{
-            font-family: 'Pangolin', cursive;
-        } 
-        strong{
-            color: black;
-        }
+        z-index: 15;/*백그라운드처럼 글씨 안보이게 */
+      }
+      nav {
+        font-family: "Pangolin", cursive;
+        display: flex;
+        justify-content: space-between;
+        height: 50px;
+        background-color: lightblue;
+        padding-top: 15px;
+        width: 100%;
+      }
+
+      .logo {
+        cursor: pointer;
+        padding: 1px;
+        margin-left: 20px;
+      }
+      .navbar {
+        margin-right: 40px;
+        font-size: 25px;
+      }
+      ul {
+        list-style: none;
+        display: flex;
+        align-items: flex-start;
+      }
+      li {
+        padding: 0 15px;
+      }
+      a {
+        text-decoration: none;
+        color: gray;
+        width: 100px;
+      }
+      .logologo {
+        color: rgb(65, 65, 95);
+        font-weight: 100px;
+      }
+      img {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+      }
+
+      main {
+        background-image: url(images/홈페이지\ 배경화면으로\ 쓸것.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 1200px;
+        width: 100%;
+        margin-top: 0;
+        border-bottom: 1px solid black;
+      }
+      .ment1 {
+        position: relative;
+        top: 250px;
+        left: 10px;
+        font-size: 45px;
+        color: black;
+        font-family: "Pangolin", cursive;
+        margin: 10px;
+      }
+      .ment2 {
+        position: relative;
+        top: 220px;
+        left: 10px;
+        font-size: 25px;
+        color: black;
+        font-family: "Pangolin", cursive;
+        margin: 40px;
+      }
+      footer {
+        font-family: "Pangolin", cursive;
+      }
+      strong {
+        color: black;
+      }
     </style>
-</head>
-<body>      
+  </head>
+  <body>
     <header>
-        <nav>
-            <div class="logo">
-               <a href="홈페이지 만들기.html" class="logologo"><h1>YU SEUNG MIN</h1></a> 
-            </div>
-            <div class="navbar">
-                <ul>
-                    <li><a href="자기소개.html">자기소개</a></li>
-                    <li><a href="어학연수.html">어학연수 사진</a></li>
-                    <li><a href="https://www.instagram.com/sm_yu29" target='_blank'>Instagram<img src="../images/인스타완성.jpg"> </a></li>                    
-                    <li><a href="https://smileben.tistory.com" target='_blank'>Blog<img src="../images/t완성.jpg"></a></li>                    
-                </ul>
-            </div>
-        </nav>
-        </header>
-           
+      <nav>
+        <div class="logo">
+          <a href="홈페이지 만들기.html" class="logologo">
+            <h1>YU SEUNG MIN</h1></a>
+        </div>
+        <div class="navbar">
+          <ul>
+            <li><a href="자기소개.html">자기소개</a></li>
+            <li><a href="어학연수.html">어학연수 사진</a></li>
+            <li>
+              <a href="https://www.instagram.com/sm_yu29" target="_blank"
+                >Instagram<img src="../images/인스타완성.jpg" />
+              </a>
+            </li>
+            <li>
+              <a href="https://smileben.tistory.com" target="_blank">Blog<img src="../images/t완성.jpg"/></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
     <main>
-            <h2 class="ment1"> WELCOME TO<br> MY HOMEPAGE</h2>
-            <div class="ment2">유승민의 홈페이지에<br> 오신 것을 환영합니다.</div>            
+      <h2 class="ment1">
+        WELCOME TO<br />
+        MY HOMEPAGE
+      </h2>
+      <div class="ment2">
+        유승민의 홈페이지에<br />
+        오신 것을 환영합니다.
+      </div>
     </main>
     <footer>
-        <a href="http://acorncampus.co.kr/" target='_blank'><strong>에이콘아카데미</strong></a> 서울 마포구 양화로 122 3층, 4층  ( 02-2231-6412 )
-        <br>MAKE BY YU SEUNG MIN. 
+      <a href="http://acorncampus.co.kr/" target="_blank"
+        ><strong>에이콘아카데미</strong></a>
+      서울 마포구 양화로 122 3층, 4층 ( 02-2231-6412 ) <br />MAKE BY YU SEUNG
+      MIN.
     </footer>
-
-</body>
+  </body>
 </html>
