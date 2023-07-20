@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반지름 구하기</title>
+</head>
+<body>
+
+    <script>
+        radious = prompt("반지름이 얼마입니까?", "");
+        circle_area = radious * radious * 3.14;
+        document.write("원의 넓이 : " + circle_area + "<dr>");
+        
+        rectWidth = prompt("사각형 가로 길이", "");
+        rectHeight = prompt("사각형 세로 길이", "");
+        rect_area = rectWidth * rectHeight;
+        document.write("사각형 넓이 : " + rect_area + "<br>");
+
+        triWidth = prompt("삼각형 가로", "");
+        triHeight = prompt("삼각형 세로", "");
+        tri_area = triWidth * triHeight /2;
+        document.write("삼각형의 넓이 : " + tri_area);
+
+
+    </script>
+</body>
+</html>
