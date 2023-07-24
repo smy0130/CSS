@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for반복문</title>
+</head>
+<body>
+    
+    <script>
+        let sum = 0;
+        sum += 1; //sum=sum+1과 같다.
+        sum += 2;
+        sum += 3;
+        sum += 4;
+        sum += 5;
+        document.write("1부터 5까지 합" + sum + "<br>");
+        document.write('1부터 5까지 합 ${sum} <br>');
+
+       
+
+        //for문으로 1부터 5까지 더하기
+        //let i;
+        // let sumFor = 0;
+        let sumFor = 0;
+
+        //초깃값; 2조건; 1증가식
+        //for(let i=1; i<6; i++){ //i++ 는 1을 증감 
+         //  sumFor += i; //sumFor= sumFor + i         
+       // }
+        
+       // document.write("1부터 5까지 for문 이용" + sumFor + "<br>");
+        
+        //for문을 이용해서 1000까지 더하기
+        let sumSS = 0;
+        for(let j=1; j<1001; j++){
+            sumSS += j;
+        }
+        document.write("1부터 1000까지 for문 이용" + sumSS + "<br>");
+
+        //1~10까지 숫자 중 for 짝수만 더하기, 홀수만 더하기
+
+        //let sumEven = 0;
+        //for(let k=0; k<11;)
+       
+       
+       
+        let n = 10;
+        let sumE = 0;
+        for(let i=1; i<=n; i++){
+            if(i%2===1) //i가 홀수라면 건너뜀
+            continue
+            sumE += i;
+            document.write(i + "짝수라면" + sumE + "<br>");
+        }
+
+        
+        let sumW = 0;
+        for(let i=1; i<=n; i++){
+            if(i%2===0) //i가 짝수라면 건너뜀
+            continue
+            sumW += i;
+            document.write(i + "홀수라면" + sumW + "<br>");
+        }
+
+        //별찍기
+        //for(let k=0; k<11; k++){
+        //    document.write("* <br>");
+        //}
+
+        for(k=1; k<11; k++){// 줄개수
+            for(j=1; j<k; j++){//별개수
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모달창 만들기</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        #modal-box{
+            border: 1px solid;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(128, 128, 128, 0.6);
+            justify-content: center;
+            align-items: center;
+            display: none;
+        }
+        #open{
+            display: inline-block;
+            margin-left: 5px ;
+            margin-top: 10px;
+            border: 1px solid skyblue;
+            background-color: (0,0,0,0);
+            color : black;
+            padding: 5px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+            width: 100px;
+            text-align: center;
+            
+            
+        }
+        #modal-box.active{
+            display: flex;
+           
+        }
+        #modal-contents{
+            width: 300px;
+            height: 200px;
+            border: 1px solid red;
+            padding: 10px;
+            background-color: rgb(201, 223, 232);
+        }
+    </style>
+</head>
+<body>
+    <button id="open"> 프로필 보기 </button>
+
+    <div id="modal-box">
+        <div id="modal-contents">
+            <span id="title">인사해보기</span>
+            <h1>안녕하세요</h1>
+            <h2>유승민입니다.</h2>
+            <h3>반갑습니다.</h3>
+            <h4>Nice to meet you</h4>
+            <h5>嬉しいです</h5>
+            <button id="close">닫기 X</button>
+        </div>
+    </div>
+
+    <script>
+        const open = document.querySelector("#open");
+        const close = document.querySelector("#close");
+        const modalBox = document.querySelector("#modal-box")
+
+        open.addEventListener("click", () =>{
+            //클릭하면 클래스리스트에 active 스타일 추가
+            modalBox.classList.add("active");
+            //토글로 바꿔서 입력해보기
+        })
+
+        close.addEventListener("click", () =>{
+            modalBox.classList.remove("active");
+            //토글로 바꿔서 입력해보기
+        })
+    </script>
+</body>
+</html>
