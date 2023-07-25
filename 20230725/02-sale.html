@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sale</title>
+    <style>
+      * {
+      }
+
+      .contents {
+        display: inline-block;
+        width: 350px;
+        height: 380px;
+        background-color: darkolivegreen;
+      }
+      img {
+        margin-left: 23px;
+        margin-top: 10px;
+        height: 200px;
+        width: 300px;
+      }
+      li {
+        line-height: 200%;
+        list-style: none;
+        color: aliceblue;
+      }
+      button {
+        height: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contents">
+      <img
+        src="https://img.freepik.com/free-vector/gradient-sale-background_23-2148861100.jpg?size=626&ext=jpg"
+      />
+      <form>
+        <ul>
+          <li>
+            <label for="oPrice"
+              >원래가격 <input type="text" id="oPrice" />원</label
+            >
+          </li>
+          <li>
+            <label for="rate">할인율 <input type="text" id="rate" /> % </label>
+          </li>
+          <br />
+          <li>
+            <button onclick="showPrice()">할인 가격 계산하기</button>
+          </li>
+        </ul>
+      </form>
+    </div>
+    <div class="showResult"></div>
+    <!--결과창 출력할 곳-->
+
+    <script>
+      function showPrice(){
+        event.preventDefault(); //새로고침 하지 않게.
+        let $originPrice = parseFloat(document.getElementById("oPrice").value); // 입력된 원래 가격을 실수형으로 변환
+        let $discountRate = parseFloat(document.getElementById("rate").value); // 입력된 할인율을 실수형으로 변환
+
+        if (isNaN($originPrice) || isNaN($discountRate)) {
+          document.querySelector(".showResult").innerHTML =
+            "유효한 숫자를 입력해주세요.";
+          return;
+        }
+
+        let $discountAmount = $originPrice * ($discountRate / 100); // 할인 금액 계산
+        let $finalPrice = $originPrice - $discountAmount; // 할인 후 최종 가격 계산
+
+        // 결과를 표시하기 위해 InnerHTML 사용
+        document.querySelector(".showResult").innerHTML = `
+            할인 금액: ${$discountAmount.toFixed(0)}원<br>
+            최종 가격: ${$finalPrice.toFixed(0)}원
+        `;
+      }
+
+      // function showPrice() {
+      //let $originPrice = parseFloat(document.getElementById('oPrice').value);
+      //할인율
+      //할인 금액 = 원래가격 * (할인율/100)
+      //최종 가격 = 원래가격 - 할인금액
+
+      //innerHTML 으로 결과 내용 출력
+      // document.querySelector('.showResult').innerHTML = ``;
+    </script>
+  </body>
+</html>

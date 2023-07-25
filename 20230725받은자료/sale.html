@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        width: 200px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="contents">
+      <img src="https://nebula.org/blog/wp-content/uploads/2020/04/ancestry-sale.png">
+      <form>
+        <ul>
+          <li>
+            <label for="oPrice">원래 가격
+            <input type="text" id="oPrice">원</label>
+          </li>
+          <li>
+            <label for="rate">할인율
+            <input type="text" id="rate"> % </label>
+          </li>
+          <li>
+            <button onclick="showPrice()"> 할인 가격 계산하기 </button>
+          </li>
+        </ul>
+      </form>
+    </div>
+    <div class="showResult"></div> <!--결과창 출력할 곳-->
+
+    <script>
+        function showPrice(){
+            let $originPrice = document.getElementById('oPrice').value; //원래 가격
+            //할인율
+            //할인 금액 = 원래가격 * (할인율/100)
+            //최종가격
+
+            //innerHTML 으로 결과 내용 출력
+            document.querySelector('.showResult').innerHTML = ``;
+
+        }
+    </script>
+  </body>
+</html>

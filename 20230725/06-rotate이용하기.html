@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rotate</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+            }
+        #box{
+            background-color: aquamarine;            
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;          
+          }
+        #container{
+            position: absolute;
+            margin-top: 100px;
+        }
+        #rotateRight, #rotateLeft {
+            text-decoration: none;
+            border: 2px solid darkgray;
+            background-color: antiquewhite;
+            cursor: pointer;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="box">돌려</div>
+    <div id="container">
+        <a id="rotateLeft" href="#">Rotate Left</a>
+        <a id="rotateRight" href="#">Rotate Right</a>
+    </div>
+
+    <script>
+        const box = document.getElementById("box");
+        let num = 0;
+
+        document.getElementById("rotateRight").addEventListener("click", ()=> {
+            num += 30;
+            box.style.transform = `rotate(${num}deg)`;            
+        });
+
+        document.getElementById("rotateLeft").addEventListener("click", () => {
+            num -=30;
+            box.style.transform = `rotate(${num}deg)`; 
+        })
+
+    </script>
+    
+</body>
+</html>

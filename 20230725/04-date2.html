@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date 2</title>
+    <style>
+        div{
+            border: 3px solid black;                       
+            width: 300px;
+            height: 200px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+            margin-left: 100px;
+            padding: 100px 0;  
+            margin-top: 100px;       
+            background-color: aquamarine; 
+                     
+        }
+       #container{
+       
+        text-align: center; 
+       }
+        #result{
+            font-weight: bold;
+            font-size: 30px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1> 공부한 기간 </h1>
+        <p><span class="accent" id="result"></span>일이 되었습니다.</p>
+        <p>축하합니다!</p>
+
+        <script>
+          //  let now = new Date("2023-07-25"); //오늘시작
+          //  let firstDay = new Date("2023-7-10"); //시작한 날짜
+
+          //  let toNow = now.getTime();  //오늘까지 지난 시간 (밀리 초)
+
+          //  passedTime = Math.round(passedTime/(1000*60*60*24));
+            //밀리 초를 일수로 계산하고 반올림
+            //getTime() 메서드는 특정한 날까지의 시간을 밀리초(1/1000초)단위로 표시한다.
+
+            let now = new Date("2023-07-25"); // 오늘 날짜
+            let firstDay = new Date("2023-07-10"); // 시작한 날짜
+
+            let passedTime = now.getTime() - firstDay.getTime(); // 오늘까지 지난 시간 (밀리 초)
+
+            passedTime = Math.round(passedTime / (1000 * 60 * 60 * 24)); // 밀리 초를 일수로 계산하고 반올림
+
+            document.getElementById("result").textContent = passedTime; // 결과를 출력
+        </script>
+
+    </div>
+</body>
+</html>

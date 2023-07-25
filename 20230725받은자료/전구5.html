@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{width: 300px; height: 220px;}
+    </style>
+</head>
+<body>
+    <p> 😁 if 사용 </p>
+    <img src="../images/cute1.webp" id="pic"> <br>
+    <button id="onBtn" onclick="light(1)">켜짐</button>
+    <button id="offBtn" onclick="light(0)">꺼짐</button>
+
+    <script>
+        function light(sw){
+            let pic;
+            if(sw == 0){
+                pic = "../images/cute1.webp"
+            } else {
+                pic = "../images/cute2.jpg"
+            }
+            document.getElementById("pic").src = pic;
+        }
+    </script>
+</body>
+</html>

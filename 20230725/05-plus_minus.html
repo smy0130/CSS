@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>plus_minus</title>
+    <style>
+        div{
+            font-size: 50px            
+        
+
+        }
+        .inText   {
+            border: 2px solid darkgray;
+            background-color: skyblue;
+            width: 60px;
+            height: 70px;
+            margin-top: 10px;
+            text-align: center;
+        } 
+        
+        #btnPlus, #btnMinus{
+            font-size: 30px;
+            border: 2px solid darkgray;
+            background-color: skyblue;            
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <a href="#" id="btnPlus"> plus</a>
+    <a href="#" id="btnMinus"> minus</a>
+    <div class="inText"></div>
+
+    <script>
+     //   const $btnPlse = document.getElementById("btnPlus");
+     //   let $inText = document.querySelector(".inText");
+     //   let num = 0; //제어할 숫자를 0으로
+
+     //   $btnPlse.addEventListener("click", e => {
+     //       e.preventDefault(); //새로고침 방지
+     //       num++; //1씩 증가
+     //       console.log(num);
+      //      $inText.innerText = num;
+     //   })
+        //btnMinus를 클릭할 때마다
+      //  const $btnMinus = document.getElementById("btnPlus");
+     //   let $inText = document.querySelector(".inText");
+     //   let num = 0; //제어할 숫자를 0으로
+
+     //   $btnMinus.addEventListener("click", e => {
+     //       e.preventDefault(); //새로고침 방지
+      //      num--; //-1씩 증가
+      //      console.log(num);
+      //      $inText.innerText = num;
+     //   })
+    const $btnPlus = document.getElementById("btnPlus");
+    const $btnMinus = document.getElementById("btnMinus");
+    const $inText = document.querySelector(".inText");
+    let num = 0; // 제어할 숫자를 0으로 초기화
+
+    $btnPlus.addEventListener("click", e => {
+        e.preventDefault(); // 새로고침 방지
+        num++; // 1씩 증가
+        console.log(num);
+        $inText.innerText = num;
+    });
+
+    $btnMinus.addEventListener("click", e => {
+        e.preventDefault(); // 새로고침 방지
+        num--; // -1씩 감소
+        console.log(num);
+        $inText.innerText = num;
+    });
+    </script>
+</body>
+</html>
