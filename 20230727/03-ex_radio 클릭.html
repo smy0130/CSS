@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> ex_radio 클릭</title>
+</head>
+<body>
+    <div id="radioContainer">
+        <input type="radio" name="radioGroup"> 옵션1
+        <input type="radio" name="radioGroup"> 옵션2
+        <input type="radio" name="radioGroup"> 옵션3
+    </div>
+    <script>
+        //부모 요소에 이벤트 리스너 등록
+        document.getElementById("radioContainer").addEventListener("change", function(event){
+            //이벤트가 발생한 요소 확인
+            const target = event.target;
+
+            if (target.matches(".radioOption")){
+                console.log(target.value + "이 선택")
+            } else{
+                //해제 인식이 되지 않는다. 체크박스 사용한다.
+                console.log(target.value + "해제")
+            }
+        });
+    </script>
+</body>
+</html>

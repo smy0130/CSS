@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 텍스트 노드 추가 버튼</title>
+    <style>
+       .tab-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+        .additional-text {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1> 노드 리스트 </h1>
+    <pre>
+        텍스트 노드 추가하기.   
+        DOM에 새로운 요소를 추가할 때는
+        가장 먼저 요소 노드를 만들어야 한다.
+
+        1. 요소 노드를 만들기 createElement()메서드
+        2. 택스트 노드 만들기 createTextNode()
+        3. 자식 노드 연결하기 appendChild()        
+    </pre>
+    <button class="tab-button">더 보기</button>
+    <div class="additional-text">노드를 만드는 법을 알아보는데 잘 모르겠음</div>
+    
+    
+    </div>
+    <script>
+         //1. 요소 노드 만들기 createElement()메서드
+         let newP = document.createElement("p");
+        //2. 텍스트 노드 만들기 createTextNode() 메서드
+        let textNode = document.createTextNode("추가될 내용 부분");
+        //3. 자식 노드 연결하기 appendChild() 메서드
+        newP.appendChild(textNode);
+        //p요소 노드를 body 노드의 자식 노드로 추가
+        document.body.appendChild(newP);
+
+        const button = document.querySelector(".tab-button");
+        const additionalText = document.querySelector(".additional-text");
+
+            let isShown = false;
+
+        button.addEventListener("click", function () {
+            // 상태에 따라 동작 결정
+            if (isShown) {
+                additionalText.style.display = "none";
+            } else {
+                additionalText.style.display = "block";
+            }
+
+            // 상태 변경
+            isShown = !isShown;
+        });
+        
+    </script>
+</body>
+</html>

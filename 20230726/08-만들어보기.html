@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>만들어보기</title>
+    <style>
+         #big{
+            width: 500px; height: 500px;
+        }
+        .small{
+            width: 150px;
+            height: 150px;
+        }
+       #small-pic{
+        display: flex;
+        justify-content: space-around;        
+        align-items: center;
+        border: 3px solid skyblue;
+
+       }
+       #prod-pic{
+        display: flex;        
+        margin-top: 20px;
+        border: 10px solid skyblue;
+        width: 500px;
+        justify-content: center;        
+        align-items: center;
+        margin-left: auto; /* 수평 가운데 정렬 */
+        margin-right: auto; /* 수평 가운데 정렬 */
+       }
+    </style>
+</head>
+<body>
+    <boder>
+        <div id = "container">            
+            
+                <div id="small-pic">
+                    <img src="../images/고양이.jpg" class="small">
+                    <img src="../images/고양이1.jpg" class="small">
+                    <img src="../images/고양이2.jpg" class="small">
+                    <img src="../images/고양이3.jpg" class="small">
+                    <img src="../images/고양이4.jpg" class="small">
+                    <img src="../images/고양이5.jpg" class="small">
+                </div>
+                <div id="prod-pic">
+                    <img src="../images/고양이6.jpg" id="big">
+                </div>
+
+            <script>
+        let big = document.querySelector("#big");
+        let smallPics = document.querySelectorAll(".small");
+
+        for(let i=0; i<smallPics.length; i++){
+            smallPics[i].addEventListener("click", changePic);
+        }
+
+        let initialImage = big.src; // 초기 이미지 소스를 변수에 저장
+
+        function changePic(){
+            let newPic = this.src;
+            big.setAttribute("src", newPic);
+        }
+        function resetImage() {
+                big.setAttribute("src", initialImage);
+            }
+
+            const prodPic = document.getElementById("prod-pic");
+            prodPic.addEventListener("click", resetImage);
+            </script>
+    </boder>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 작은 이미지 클릭 </title>
+    <style>
+        #big{
+            width: 200px; height: 200px;
+        }
+        .small{
+            width: 150px;
+            height: 150px;
+        }
+        .tab-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        /* 보여질 내용의 스타일 */
+        .tab-content {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            width: 400px;
+        }
+
+        /* 보여질 내용의 클래스 */
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id = "container">
+        <h1>에디오피아 게뎁</h1>
+        <div id="prod-pic">
+            <img src="../images/고양이2.jpg" id="big">
+            <div id="small-pic">
+                <img src="../images/고양이.jpg" class="small">
+                <img src="../images/고양이1.jpg" class="small">
+                <img src="../images/고양이3.jpg" class="small">
+            </div>
+        </div>
+        <div id ="desc">
+            <ul>
+                <li>상품명 : 에디오피아 게뎁</li>
+                <li>판매가 : 9,000원</li>
+                <li>배송비 : 3,000원<br>(50,000원 이상 구매시 무료)</li>
+                <li>적립금 : 180원(2%)</li>
+                <li>로스팅 : 2019.06.17</li>
+                <button>장바구니 담기</button>                
+            </ul>
+            <a href="#" id="view">상세 설명 보기</a>
+            <div id="tab" class="tab-content">
+                <h3> 설명내용 </h3>
+                <p>
+                    이 커피는 에디오피아에서 생산된 제품으로....
+                </P>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let big = document.querySelector("#big");
+        let smallPics = document.querySelectorAll(".small");
+
+        for(let i=0; i<smallPics.length; i++){
+            smallPics[i].addEventListener("click", changePic);
+        }
+
+        function changePic(){
+            let newPic = this.src;
+            big.setAttribute("src", newPic);
+        }
+         // 상세 설명 보기 링크 클릭 이벤트 핸들러 함수
+         function showDescription(event) {
+            event.preventDefault();
+            const tabContent = document.getElementById("tab");
+            tabContent.classList.toggle("active");
+        }
+
+        // 상세 설명 보기 링크에 클릭 이벤트 리스너 추가
+        const viewLink = document.getElementById("view");
+        viewLink.addEventListener("click", showDescription);
+
+        function openTab(evt, tabName){ //매개변수
+            //모든 탭 내용을 안보이게
+            const tabContents = document.querySelectorAll(".tab-content");
+            for (const content of tabContents){
+                content.style.display = 'none';
+            }
+              //선택한 탭 내용 보여주고 active 클래스를 추가
+              document.getElementById(tabName).style.display = 'block';
+            evt.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>

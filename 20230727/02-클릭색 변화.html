@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클릭색 변화</title>
+</head>
+<body>
+    <h3> 클릭해보세요 </h3>
+        <h5> 할 일 목록 </h5>
+        <ul>
+            <!--엔티티코드-->            
+            <li><span class="check"> &check; 할 일1</span></li>
+            <li><span class="check"> &check; 할 일2</span></li>
+            <li><span class="check"> &check; 할 일3</span></li>
+            <li><span class="check"> &check; 할 일4</span></li>
+            <li><span class="check"> &check; 할 일5</span></li>
+        </ul>
+
+        <script>
+            // All은 class를 이용해서 모든 class를 선택
+            let listB = document.querySelectorAll(".check");
+
+            for(let i=0; i<listB.length; i++){
+                listB[i].addEventListener("click", function(){
+                    listB[i].parentNode.style.color = "#ccc";
+                    listB[i].parentNode.style.textDecoration = "line-through";
+                    // this.style.color = "blue";
+                    this.style.backgroundColor = "lightgray";
+                    this.style.fontSize = "2opx";
+                })
+            }
+        </script>
+</body>
+</html>

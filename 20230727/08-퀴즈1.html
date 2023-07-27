@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 10px 20px;
+            border: 1px solid #ccc;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #f1f1f1;
+        }
+
+        /* 마지막 결과 값 스타일 변경 */
+        td:last-child {
+            background-color: #ffc107;
+        }
+    </style>
+</head>
+<body>
+    
+    <script>
+        let numbers = [2, 4, 6, 8, 10];
+        showArray(numbers);
+
+        let sum = 0;
+        for(let i=0; i<numbers.length; i++){
+            sum += numbers[i];
+        }
+        //push를 이용해서 더한 결과를 배열 끝에 추가
+        numbers.push(sum);
+        showArray(numbers);
+
+        //배열 요소를 차례대로 더하기, 화면 출력
+        function showArray(arr){
+            let str = "<table><tr>";
+            for (let i=0; i<arr.length; i++){
+                str += "<td>" + arr[i] + "</td>";                
+            }
+            str += "</tr></table>";
+            document.write(str);
+        }
+    </script>
+</body>
+</html>
