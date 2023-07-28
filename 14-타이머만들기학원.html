@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> 타이머 만들기 </title>
+</head>
+
+<body>
+  <div id="wrapper">
+    <form>
+      <label><input type="text" id="startMin">분</label>
+      <label><input type="text" id="startSec">초</label>
+      <input type="button" value="START" class="start-btn" onclick="startTimer()">
+      <input type="button" value="RESET" class="reset-btn" onclick="resetTimer()">
+    </form>
+    <hr>
+    <div id="display" class="remaining">
+    </div>
+  </div>
+  <script>
+    let min, sec;
+    let timer; // setInterval() 결과를 저장할 변수
+    function startTimer() {
+      min = document.querySelector('#startMin').value;  // '분' 값 가져오기
+      if (min == "") min = 0; //if 분값 입력 없으면 0 대입
+      sec = document.querySelector('#startSec').value; //초 값 가져오기
+      if (sec == "") sec = 0; //if 초값 입력 없으면 0 대입
+      timer = setInterval(countTimer, 1000);  // 1초마다 countTimer 함수 실행
+    }
+
+    // 0이 아니면 sec--; 1초 줄이기 함수 만들기 countTimer()
+    function countTimer() {
+      // #display 위치에 innerText로 보여주기 
+      if (sec != 0) {  // '초' 값이 있다면
+        sec--;  // 1초 줄임   
+        document.querySelector('#display').innerText = `${min}분 ${sec}초`;
+      } else {
+        if (min != 0) { //'분' 값이 있다면 1분줄이고 59초부터 시작
+          min--; //1분 줄임
+          sec = 59; //59초부터 시작
+        } else { //둘다 없다면
+          clearTimer(timer); //함수실행
+          //"타이머 종료"라고 나타내기
+          document.querySelector('#display').innerText = "타이머 종료";
+        }
+      }
+    }
+    function resetTimer() {
+      clearTimer(timer);
+    }
+    function clearTimer(t) {
+      clearInterval(t); //타이머 종료
+      document.querySelector("#display").innerText = "";  // 표시 내용 지우기
+      document.querySelector("#startMin").value = "";  // 사용자 입력 내용(분) 지우기
+      document.querySelector("#startSec").value = "";  // 사용자 입력 내용(분) 지우기
+    }
+  </script>
+</body>
+
+</html>

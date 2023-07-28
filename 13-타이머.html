@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예쁜 타이머</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #timerContainer {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        #timerDisplay {
+            font-size: 2em;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .timeBox {
+            width: 50px; /* 숫자 박스 크기 조정 */
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            margin: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .timeBox:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>예쁜 타이머</h1>
+
+    <div id="timerContainer">
+        <div id="timerDisplay">
+            <div class="timeBox" id="minutes"></div>분
+            <div class="timeBox" id="seconds"></div>초
+        </div>
+
+        <div id="buttonsContainer">
+            <button id="startButton" onclick="startTimer()">Start</button>
+            <button id="resetButton" onclick="resetTimer()">Reset</button>
+        </div>
+    </div>
+
+    <script>
+        let timerInterval;
+        let seconds = 0;
+
+        function startTimer() {
+            if (!timerInterval) {
+                timerInterval = setInterval(updateTimer, 1000);
+            }
+        }
+
+        function updateTimer() {
+            seconds++;
+            const minutes = Math.floor(seconds / 60);
+            const secondsDisplay = String(seconds % 60).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = secondsDisplay;
+        }
+
+        function resetTimer() {
+            clearInterval(timerInterval);
+            timerInterval = null;
+            seconds = 0;
+            document.getElementById('minutes').textContent = '00';
+            document.getElementById('seconds').textContent = '00';
+        }
+    </script>
+</body>
+</html>

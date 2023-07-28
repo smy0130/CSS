@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>방명록 만들기</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #formContainer {
+            display: flex;
+            flex-direction: column;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        input[type="text"],
+        textarea {
+            margin: 10px 0;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #submitButton {
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #submitButton:hover {
+            background-color: #0056b3;
+        }
+
+        #guestbook {
+            max-width: 600px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: left; /* 입력 내용 왼쪽 정렬 */
+        }
+
+        .entry {
+            margin-bottom: 10px;
+        }
+
+        .name {
+            font-weight: bold;
+        }
+
+        .message {
+            font-style: italic;
+            text-align: left; /* 방문한 곳 내용 왼쪽 정렬 */
+        }
+
+        /* 표 스타일 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        th:first-child, td:first-child {
+            border-left: 1px solid #ddd;
+        }
+
+        th:last-child, td:last-child {
+            border-right: 1px solid #ddd;
+        }
+
+        /* 이름과 방문한 곳이 붙어있도록 설정 */
+        td {
+            white-space: nowrap;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>방명록 만들기</h1>
+
+    <div id="formContainer">
+        <label for="name">이름:</label>
+        <input type="text" id="name" required>
+
+        <label for="message">방문한 곳:</label>
+        <textarea id="message" rows="4" required></textarea>
+
+        <button id="submitButton" onclick="addEntry()">기록하기</button>
+    </div>
+
+    <div id="guestbook">
+        <table>
+            <tr>
+                <th>이름</th>
+                <th>방문한 곳</th>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        function addEntry() {
+            const name = document.getElementById("name").value;
+            const message = document.getElementById("message").value;
+            
+            if (name.trim() === "" || message.trim() === "") {
+                alert("이름과 방문한 곳을 모두 입력해주세요.");
+                return;
+            }
+
+            const entryTable = document.createElement("table");
+            const newRow = entryTable.insertRow();
+
+            const nameCell = newRow.insertCell();
+            const messageCell = newRow.insertCell();
+
+            const nameDiv = document.createElement("div");
+            const messageDiv = document.createElement("div");
+
+            nameDiv.innerHTML = name;
+            messageDiv.innerHTML = message;
+            messageCell.classList.add("message"); // CSS 클래스 추가
+
+            nameCell.appendChild(nameDiv);
+            messageCell.appendChild(messageDiv);
+
+            newRow.appendChild(nameCell);
+            newRow.appendChild(messageCell);
+
+            document.querySelector("#guestbook table").appendChild(newRow);
+
+            document.getElementById("name").value = "";
+            document.getElementById("message").value = "";
+        }
+    </script>
+</body>
+</html>
